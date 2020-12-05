@@ -6,8 +6,16 @@
 
     <groupId>me.angeschossen</groupId>
     <artifactId>UpgradeableHoppersAPI</artifactId>
-    <version>1.8.8</version>
+    <version>1.8.9</version>
+    <name>UpgradeableHoppersAPI</name>
 
+
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.realityforge.org.jetbrains.annotations/org.jetbrains.annotations -->
@@ -18,11 +26,10 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Spigot 1.16.3 -->
         <dependency>
-            <groupId>spigot</groupId>
-            <artifactId>server</artifactId>
-            <version>1.16.3</version>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.16.3-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
