@@ -3,8 +3,8 @@ package me.angeschossen.upgradeablehoppers.api.objects;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.HashMap;
 
 public interface Link {
