@@ -17,8 +17,7 @@ public interface ItemStackerIntegration {
 
     /**
      * Get item stack from your custom stacked item. Your integration must handle the creation of the ItemStack object.
-     * That means that you need to set the correct ItemStack amount {@param item} and other values like NBT data.
-     * You may want to use .clone to create the ItemStack.
+     * That means that you need to return the correct ItemStack amount {@param item} and other values like NBT data.
      *
      * @param item      The item entity
      * @param maxAmount The returned ItemStack's amount should not be higher than this. Usually the value is 64.
