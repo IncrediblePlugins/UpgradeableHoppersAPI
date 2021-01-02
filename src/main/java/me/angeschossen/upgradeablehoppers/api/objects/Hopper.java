@@ -24,19 +24,24 @@ public interface Hopper {
 
     boolean hasLinks();
 
+    @Deprecated
     Collection<Material> getFilter();
 
+    @Deprecated
     boolean addFilterItem(Material material);
 
+    @Deprecated
     boolean removeFilterItem(Material material);
 
+    @Deprecated
     boolean toggleFilterMode();
-
-    Inventory getUpperContainer();
 
     boolean toggleSuction();
 
+    @Deprecated
     boolean canTransfer(Material material);
+
+    boolean canTransfer(ItemStack itemStack);
 
     Inventory getInventory();
 
@@ -52,7 +57,7 @@ public interface Hopper {
 
     void setSuctionRadius(int radius);
 
-    int getLinksAmount();
+    int getMaxLinks();
 
     void setLinksAmount(int maxlinks);
 
@@ -70,6 +75,7 @@ public interface Hopper {
 
     Location getLocation();
 
+    @Deprecated
     Link getVanillaLink();
 
     boolean isChunkLoaded();

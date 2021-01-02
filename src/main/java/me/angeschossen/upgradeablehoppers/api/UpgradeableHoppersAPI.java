@@ -1,14 +1,13 @@
 package me.angeschossen.upgradeablehoppers.api;
 
 
+import me.angeschossen.upgradeablehoppers.api.objects.Hopper;
 import org.bukkit.Location;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import me.angeschossen.upgradeablehoppers.api.objects.Hopper;
 
 
 public class UpgradeableHoppersAPI {
-
 
     private UpgradeableHoppersAPI() {
 

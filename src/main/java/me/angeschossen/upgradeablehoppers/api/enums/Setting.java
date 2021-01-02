@@ -2,7 +2,7 @@ package me.angeschossen.upgradeablehoppers.api.enums;
 
 public enum Setting {
 
-    SUCTION_ENABLED(0), FILTER_DELETE(1), FILTER_BLACKLIST(2);
+    SUCTION_ENABLED(0), FILTER_DELETE(1);
 
     private final int id;
 
