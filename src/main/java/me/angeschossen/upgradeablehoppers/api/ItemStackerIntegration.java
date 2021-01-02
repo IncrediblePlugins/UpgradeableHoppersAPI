@@ -28,7 +28,7 @@ public interface ItemStackerIntegration {
     ItemStack getItemStack(@NotNull Item item, final int maxAmount);
 
     /**
-     * Add or substract an amount to/from a stacked item of your plugin.
+     * Add amount to a stacked item of your plugin.
      *
      * @param item   The item entity
      * @param amount The amount to add
