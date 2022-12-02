@@ -4,7 +4,6 @@ import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException
 import me.angeschossen.upgradeablehoppers.api.hopper.link.Link;
 import me.angeschossen.upgradeablehoppers.api.hopper.role.HopperAction;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -13,7 +12,6 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -27,22 +25,7 @@ public interface Hopper {
 
     boolean hasLinks();
 
-    @Deprecated
-    Collection<Material> getFilter();
-
-    @Deprecated
-    boolean addFilterItem(Material material);
-
-    @Deprecated
-    boolean removeFilterItem(Material material);
-
-    @Deprecated
-    boolean toggleFilterMode();
-    
     boolean toggleSuction();
-
-    @Deprecated
-    boolean canTransfer(Material material);
 
     boolean canTransfer(ItemStack itemStack);
 
@@ -63,23 +46,17 @@ public interface Hopper {
      */
     @Nullable Link addLink(@NotNull Block block, @Nullable Player player) throws IllegalArgumentException, IllegalStateException, UnloadedTargetException;
 
-    @Deprecated
-    boolean addDestination(Block block, Player player);
-
     boolean removeDestination(World world, int x, int y, int z);
 
-    @Nullable
+    @NotNull
     Map<Integer, ItemStack> addItem(ItemStack... itemStack);
 
-    @Nullable
+    @NotNull
     Map<Integer, ItemStack> removeItem(ItemStack... itemStack);
 
     Coordinate getCoordinate();
 
     Location getLocation();
-
-    @Deprecated
-    Link getVanillaLink();
 
     boolean isChunkLoaded();
 
