@@ -1,7 +1,8 @@
-package me.angeschossen.upgradeablehoppers.api.objects;
+package me.angeschossen.upgradeablehoppers.api.hopper;
 
 import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException;
-import me.angeschossen.upgradeablehoppers.api.objects.role.HopperAction;
+import me.angeschossen.upgradeablehoppers.api.hopper.link.Link;
+import me.angeschossen.upgradeablehoppers.api.hopper.role.HopperAction;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -13,8 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public interface Hopper {
@@ -23,10 +24,6 @@ public interface Hopper {
     List<? extends Link> getLinks();
 
     int getFreeSpace();
-
-    int getMaxLinkDistance();
-
-    void setMaxLinkDistance(int maxLinkDistance);
 
     boolean hasLinks();
 
@@ -41,7 +38,7 @@ public interface Hopper {
 
     @Deprecated
     boolean toggleFilterMode();
-
+    
     boolean toggleSuction();
 
     @Deprecated
@@ -54,18 +51,6 @@ public interface Hopper {
     boolean canAction(UUID playerUUID);
 
     boolean canAction(Player player, HopperAction action);
-
-    int getTransferAmount();
-
-    void setTransferAmount(int amount);
-
-    int getSuctionRadius();
-
-    void setSuctionRadius(int radius);
-
-    int getMaxLinks();
-
-    void setLinksAmount(int maxlinks);
 
     /**
      * Add a link (destination).
@@ -84,10 +69,10 @@ public interface Hopper {
     boolean removeDestination(World world, int x, int y, int z);
 
     @Nullable
-    HashMap<Integer, ItemStack> addItem(ItemStack itemStack);
+    Map<Integer, ItemStack> addItem(ItemStack... itemStack);
 
     @Nullable
-    HashMap<Integer, ItemStack> removeItem(ItemStack itemStack);
+    Map<Integer, ItemStack> removeItem(ItemStack... itemStack);
 
     Coordinate getCoordinate();
 
@@ -107,6 +92,4 @@ public interface Hopper {
      * @param ownerUID New owner
      */
     void setOwner(@NotNull UUID ownerUID);
-
-    Collection<UUID> getPlayers();
 }

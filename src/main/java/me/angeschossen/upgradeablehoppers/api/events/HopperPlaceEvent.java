@@ -1,21 +1,21 @@
 package me.angeschossen.upgradeablehoppers.api.events;
 
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
+import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.inventory.BlockInventoryHolder;
 import org.jetbrains.annotations.NotNull;
 
-public class LinkCreationEvent extends Event implements Cancellable {
+public class HopperPlaceEvent extends Event implements Cancellable {
     public static HandlerList handlerList = new HandlerList();
     private final @NotNull Hopper hopper;
-    private final @NotNull BlockInventoryHolder blockInventoryHolder;
+    private final @NotNull HopperPlayer hopperPlayer;
     private boolean cancelled = false;
 
-    public LinkCreationEvent(@NotNull Hopper hopper, @NotNull BlockInventoryHolder blockInventoryHolder) {
+    public HopperPlaceEvent(@NotNull Hopper hopper,@NotNull HopperPlayer hopperPlayer) {
         this.hopper = hopper;
-        this.blockInventoryHolder = blockInventoryHolder;
+        this.hopperPlayer = hopperPlayer;
     }
 
     public static HandlerList getHandlerList() {
@@ -23,8 +23,8 @@ public class LinkCreationEvent extends Event implements Cancellable {
     }
 
     @NotNull
-    public BlockInventoryHolder getBlockInventoryHolder() {
-        return blockInventoryHolder;
+    public HopperPlayer getHopperPlayer(){
+        return hopperPlayer;
     }
 
     @NotNull

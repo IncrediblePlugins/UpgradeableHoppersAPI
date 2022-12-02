@@ -1,45 +1,54 @@
 package me.angeschossen.upgradeablehoppers.api;
 
-
 import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException;
-import me.angeschossen.upgradeablehoppers.api.objects.Hopper;
-import org.bukkit.Location;
+import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
+import me.angeschossen.upgradeablehoppers.api.stacking.ItemStackerProvider;
+import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
+public interface UpgradeableHoppersAPI {
 
-public class UpgradeableHoppersAPI {
-
-    private UpgradeableHoppersAPI() {
-
-    }
-
-    public static @Nullable Hopper getHopper(@NotNull Location location) {
+    static UpgradeableHoppersAPI getInstance() {
         return null;
     }
-
-    public static boolean isHopper(@NotNull Location location) {
-        return false;
-    }
-
-    public static void setItemStackerIntegration(@NotNull ItemStackerIntegration integration) {
-    }
-
 
     /**
-     * Register a hopper.
+     * Retrieve hopper by its coordinates.
      *
+     * @param world World
+     * @param x     Block x
+     * @param y     Block y
+     * @param z     Block z
+     * @return null, if the hopper is in an unloaded chunk or simply doesn't exist.
+     */
+    @Nullable
+    Hopper getHopper(@NotNull World world, int x, int y, int z);
+
+    /**
+     * Set a custom item stacking provider.
+     *
+     * @param provider The provider to be set
+     */
+    void setItemStackerProvider(@NotNull ItemStackerProvider provider);
+
+    /**
+     * Register a new hopper.
+     *
+     * @param plugin   Your plugin
+     * @param type     The hopper type
      * @param block    The block
-     * @param ownerUID Owner of the future hopper
-     * @throws IllegalArgumentException The block is not a hopper, the world is not a hopper world or the hopper already exists.
-     * @throws IllegalStateException    Method not called on the main thread.
-     * @throws UnloadedTargetException  The chunk is unloaded.
+     * @param ownerUID The owner
+     * @return Future with registered hopper.
+     * @throws IllegalArgumentException If {@code block} is already an upgradeable hopper or the block's material doesn't equal HOPPER.
+     * @throws IllegalStateException    If method isn't called sync.
+     * @throws UnloadedTargetException  If the chunk of the {@code block} isn't loaded.
      */
     @NotNull
-    public static Hopper registerHopper(@NotNull Block block, @NotNull UUID ownerUID) throws IllegalArgumentException, IllegalStateException, UnloadedTargetException {
-        return null;
-    }
+    CompletableFuture<Hopper> registerHopper(@NotNull Plugin plugin, @Nullable String type, @NotNull Block block, @NotNull UUID ownerUID) throws IllegalArgumentException, IllegalStateException, UnloadedTargetException;
 }

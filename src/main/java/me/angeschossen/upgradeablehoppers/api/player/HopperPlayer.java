@@ -1,4 +1,4 @@
-package me.angeschossen.upgradeablehoppers.api.objects;
+package me.angeschossen.upgradeablehoppers.api.player;
 
 import me.angeschossen.upgradeablehoppers.api.enums.Action;
 

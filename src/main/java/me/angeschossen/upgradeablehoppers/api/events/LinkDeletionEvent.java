@@ -1,7 +1,7 @@
 package me.angeschossen.upgradeablehoppers.api.events;
 
-import me.angeschossen.upgradeablehoppers.api.objects.Hopper;
-import me.angeschossen.upgradeablehoppers.api.objects.Link;
+import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
+import me.angeschossen.upgradeablehoppers.api.hopper.link.Link;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;

@@ -1,4 +1,4 @@
-package me.angeschossen.upgradeablehoppers.api.objects.role;
+package me.angeschossen.upgradeablehoppers.api.hopper.role;
 
 public enum HopperRole {
     OWNER, ADMIN, MEMBER, VISITOR
