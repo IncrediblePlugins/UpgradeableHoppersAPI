@@ -1,6 +1,7 @@
 package me.angeschossen.upgradeablehoppers.api;
 
 import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException;
+import me.angeschossen.upgradeablehoppers.api.handler.APIHandler;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
 import me.angeschossen.upgradeablehoppers.api.stacking.ItemStackerProvider;
 import org.bukkit.World;
@@ -15,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 public interface UpgradeableHoppersAPI {
 
     static UpgradeableHoppersAPI getInstance() {
-        return null;
+        return APIHandler.getInstance().getAPI();
     }
 
     /**
