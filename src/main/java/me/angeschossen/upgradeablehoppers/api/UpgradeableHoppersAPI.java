@@ -4,6 +4,7 @@ import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException
 import me.angeschossen.upgradeablehoppers.api.handler.APIHandler;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
 import me.angeschossen.upgradeablehoppers.api.stacking.ItemStackerProvider;
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.plugin.Plugin;
@@ -22,14 +23,11 @@ public interface UpgradeableHoppersAPI {
     /**
      * Retrieve hopper by its coordinates.
      *
-     * @param world World
-     * @param x     Block x
-     * @param y     Block y
-     * @param z     Block z
+     * @param location Location
      * @return null, if the hopper is in an unloaded chunk or simply doesn't exist.
      */
     @Nullable
-    Hopper getHopper(@NotNull World world, int x, int y, int z);
+    Hopper getHopper(@NotNull Location location);
 
     /**
      * Set a custom item stacking provider.
