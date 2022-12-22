@@ -18,7 +18,7 @@ public interface Link {
      * @throws NullPointerException if not loaded
      */
     @NotNull
-    Map<Integer, ItemStack> addItem(ItemStack... itemStack);
+    Map<Integer, ItemStack> addItem(ItemStack itemStack);
 
     Inventory getDestination();
 

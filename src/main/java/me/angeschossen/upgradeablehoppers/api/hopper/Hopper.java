@@ -49,10 +49,10 @@ public interface Hopper {
     boolean removeDestination(World world, int x, int y, int z);
 
     @NotNull
-    Map<Integer, ItemStack> addItem(ItemStack... itemStack);
+    Map<Integer, ItemStack> addItem(ItemStack itemStack);
 
     @NotNull
-    Map<Integer, ItemStack> removeItem(ItemStack... itemStack);
+    Map<Integer, ItemStack> removeItem(ItemStack itemStack);
 
     Coordinate getCoordinate();
 
