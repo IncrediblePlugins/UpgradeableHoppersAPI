@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -49,10 +50,10 @@ public interface Hopper {
     boolean removeDestination(World world, int x, int y, int z);
 
     @NotNull
-    Map<Integer, ItemStack> addItem(ItemStack... itemStack);
+    HashMap<Integer, ItemStack> addItem(ItemStack... itemStack);
 
     @NotNull
-    Map<Integer, ItemStack> removeItem(ItemStack... itemStack);
+    HashMap<Integer, ItemStack> removeItem(ItemStack... itemStack);
 
     Coordinate getCoordinate();
 
