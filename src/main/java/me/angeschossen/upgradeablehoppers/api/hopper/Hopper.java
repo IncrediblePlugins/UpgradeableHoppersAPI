@@ -61,6 +61,8 @@ public interface Hopper {
 
     boolean isChunkLoaded();
 
+    boolean isFull();
+
     boolean isLoaded();
 
     UUID getOwner();
