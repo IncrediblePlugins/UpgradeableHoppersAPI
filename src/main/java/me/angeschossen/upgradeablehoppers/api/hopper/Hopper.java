@@ -65,6 +65,19 @@ public interface Hopper {
 
     boolean isLoaded();
 
+    /**
+     * Get hopper item of this upgradeable hopper.
+     * @return The itemStack with its levels saved applied to it
+     */
+    @NotNull ItemStack getItem();
+
+    /**
+     * Get hopper item of this upgradeable hopper.
+     * @param ownerUUID Owner of the item. Usually {@link #getOwner()}
+     * @return The itemStack with its levels saved applied to it
+     */
+    @NotNull ItemStack getItem(@Nullable UUID ownerUUID);
+
     UUID getOwner();
 
     /**
