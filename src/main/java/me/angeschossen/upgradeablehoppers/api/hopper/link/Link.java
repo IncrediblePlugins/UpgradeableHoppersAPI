@@ -4,9 +4,7 @@ import me.angeschossen.upgradeablehoppers.api.hopper.Coordinate;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Map;
+import org.jetbrains.annotations.Nullable;
 
 
 public interface Link {
@@ -14,11 +12,11 @@ public interface Link {
     /**
      * add item
      * @param itemStack Item
-     * @return Map of fails
+     * @return ItemStack if (partly) failed.
      * @throws NullPointerException if not loaded
      */
-    @NotNull
-    Map<Integer, ItemStack> addItem(ItemStack... itemStack);
+    @Nullable
+    ItemStack addItem(ItemStack itemStack);
 
     Inventory getDestination();
 

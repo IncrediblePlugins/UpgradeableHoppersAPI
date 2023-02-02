@@ -12,9 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 public interface Hopper {
@@ -23,6 +21,8 @@ public interface Hopper {
     List<? extends Link> getLinks();
 
     int getFreeSpace();
+
+    boolean isFull();
 
     boolean hasLinks();
 
@@ -38,22 +38,21 @@ public interface Hopper {
 
     /**
      * Add a link (destination).
-     * @param block Target block.
+     *
+     * @param block  Target block.
      * @param player Optional: send failure messages to the player.
      * @return null, if the link could not be added.
      * @throws IllegalArgumentException The target block is not a block-inventory holder.
-     * @throws IllegalStateException Not called on main thread.
-     * @throws UnloadedTargetException The chunk is unloaded.
+     * @throws IllegalStateException    Not called on main thread.
+     * @throws UnloadedTargetException  The chunk is unloaded.
      */
     @Nullable Link addLink(@NotNull Block block, @Nullable Player player) throws IllegalArgumentException, IllegalStateException, UnloadedTargetException;
 
-    boolean removeDestination(World world, int x, int y, int z);
+    boolean removeLink(World world, int x, int y, int z);
 
-    @NotNull
-    HashMap<Integer, ItemStack> addItem(ItemStack... itemStack);
+    @Nullable ItemStack addItem(ItemStack itemStack);
 
-    @NotNull
-    HashMap<Integer, ItemStack> removeItem(ItemStack... itemStack);
+    @Nullable ItemStack removeItem(ItemStack itemStack);
 
     Coordinate getCoordinate();
 
@@ -61,28 +60,29 @@ public interface Hopper {
 
     boolean isChunkLoaded();
 
-    boolean isFull();
-
     boolean isLoaded();
+
+    UUID getOwner();
+
+    /**
+     * Set owner of the hopper.
+     *
+     * @param ownerUID New owner
+     */
+    void setOwner(@NotNull UUID ownerUID);
 
     /**
      * Get hopper item of this upgradeable hopper.
+     *
      * @return The itemStack with its levels saved applied to it
      */
     @NotNull ItemStack getItem();
 
     /**
      * Get hopper item of this upgradeable hopper.
+     *
      * @param ownerUUID Owner of the item. Usually {@link #getOwner()}
      * @return The itemStack with its levels saved applied to it
      */
     @NotNull ItemStack getItem(@Nullable UUID ownerUUID);
-
-    UUID getOwner();
-
-    /**
-     * Set owner of the hopper.
-     * @param ownerUID New owner
-     */
-    void setOwner(@NotNull UUID ownerUID);
 }
