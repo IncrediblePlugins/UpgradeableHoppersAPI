@@ -50,6 +50,19 @@ public interface Hopper {
 
     boolean removeLink(World world, int x, int y, int z);
 
+    /**
+     * Add item to a hopper.
+     * @param itemStack The item
+     * @param delete If true, the item will be deleted it the hopper's filters don't accept it and the hopper has deletion mode enabled.
+     * @return ItemStack with correct amount that couldn't be added.
+     */
+    @Nullable ItemStack addItem(ItemStack itemStack, boolean delete);
+
+    /**
+     * Add item to a hopper. Won't delete any items, even if the hopper doesn't allow this item and has delete mode enabled.
+     * @param itemStack The item
+     * @return ItemStack with correct amount that couldn't be added.
+     */
     @Nullable ItemStack addItem(ItemStack itemStack);
 
     @Nullable ItemStack removeItem(ItemStack itemStack);
