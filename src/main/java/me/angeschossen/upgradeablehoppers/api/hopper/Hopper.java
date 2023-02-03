@@ -52,16 +52,19 @@ public interface Hopper {
 
     /**
      * Add item to a hopper.
+     *
      * @param itemStack The item
-     * @param delete If true, the item will be deleted it the hopper's filters don't accept it and the hopper has deletion mode enabled.
-     * @return ItemStack with correct amount that couldn't be added.
+     * @param delete    If true, the item will be deleted it the hopper's filters don't accept it and the hopper has deletion mode enabled.
+     * @return ItemStack with correct amount that couldn't be added. Or null if the whole item has been added.
+     * null is also possible, if delete was true, hopper has deletion mode enable and the item couldn't be added.
      */
     @Nullable ItemStack addItem(ItemStack itemStack, boolean delete);
 
     /**
      * Add item to a hopper. Won't delete any items, even if the hopper doesn't allow this item and has delete mode enabled.
+     *
      * @param itemStack The item
-     * @return ItemStack with correct amount that couldn't be added.
+     * @return ItemStack with correct amount that couldn't be added. Or null if the whole item has been added.
      */
     @Nullable ItemStack addItem(ItemStack itemStack);
 
