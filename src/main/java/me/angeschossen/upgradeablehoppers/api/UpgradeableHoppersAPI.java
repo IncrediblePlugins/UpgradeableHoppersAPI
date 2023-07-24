@@ -3,10 +3,11 @@ package me.angeschossen.upgradeablehoppers.api;
 import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException;
 import me.angeschossen.upgradeablehoppers.api.handler.APIHandler;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
+import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;
 import me.angeschossen.upgradeablehoppers.api.stacking.ItemStackerProvider;
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,6 +16,14 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 public interface UpgradeableHoppersAPI {
+
+    /**
+     * Get online player data.
+     * @param player The player must be online.
+     * @return null, if it doesn't exist or is offline.
+     */
+    @Nullable
+    HopperPlayer getHopperPlayer(Player player);
 
     static UpgradeableHoppersAPI getInstance() {
         return APIHandler.getInstance().getAPI();

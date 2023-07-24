@@ -6,11 +6,15 @@
 
     <groupId>me.angeschossen</groupId>
     <artifactId>UpgradeableHoppersAPI</artifactId>
-    <version>4.12.3</version>
+    <version>4.13.5</version>
     <name>UpgradeableHoppersAPI</name>
 
 
     <repositories>
+        <repository>
+            <id>jitpack</id>
+            <url>https://jitpack.io</url>
+        </repository>
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -30,6 +34,14 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.16.3-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- com.github.Angeschossen:PluginFrameworkAPI:1.0.1 -->
+        <dependency>
+            <groupId>com.github.Angeschossen</groupId>
+            <artifactId>PluginFrameworkAPI</artifactId>
+            <version>1.0.2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
