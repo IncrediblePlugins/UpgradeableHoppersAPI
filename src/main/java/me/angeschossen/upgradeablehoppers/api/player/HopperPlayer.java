@@ -5,13 +5,12 @@ import me.angeschossen.upgradeablehoppers.api.enums.Action;
 
 import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
 
 public interface HopperPlayer {
     /**
      * Get ids and coordinates of placed hoppers.
      *
-     * @return IDs and coordinates of placed hoppers.
+     * @return IDs and coordinates of placed hoppers
      */
     Map<Integer, ? extends BlockPosition> getHoppers();
 
@@ -23,7 +22,7 @@ public interface HopperPlayer {
 
     /**
      * Get the ID of the player.
-     * @return ID of the player
+     * @return Unique ID of the player
      */
-    UUID getUID();
+    UUID getUUID();
 }
