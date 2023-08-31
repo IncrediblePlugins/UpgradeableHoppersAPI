@@ -4,7 +4,7 @@ import com.github.angeschossen.pluginframework.api.blockutil.BlockPosition;
 import me.angeschossen.upgradeablehoppers.api.events.hopper.link.LinkDeletionEvent;
 import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException;
 import me.angeschossen.upgradeablehoppers.api.hopper.link.Link;
-import me.angeschossen.upgradeablehoppers.api.hopper.role.HopperAction;
+import me.angeschossen.upgradeablehoppers.api.hopper.role.RoleFlag;
 import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -76,7 +76,7 @@ public interface Hopper {
      * @param action action to check
      * @return true, if the player is allowed to do this at this hopper
      */
-    boolean canAction(@NotNull Player player, @NotNull HopperAction action);
+    boolean canAction(@NotNull Player player, @NotNull RoleFlag action);
 
     /**
      * Add a link (destination)
