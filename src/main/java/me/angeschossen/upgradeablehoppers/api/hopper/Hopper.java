@@ -94,10 +94,10 @@ public interface Hopper {
      * Remove a link.
      *
      * @param player Player that initiated the removal. If null, no player initiated it.
-     * @param world the world of the link
-     * @param x     x block
-     * @param y     y block
-     * @param z     z block
+     * @param world  the world of the link
+     * @param x      x block
+     * @param y      y block
+     * @param z      z block
      * @return false, if the hopper has no link at this position
      */
     boolean removeLink(@Nullable HopperPlayer player, World world, int x, int y, int z, LinkDeletionEvent.Reason reason);
@@ -134,6 +134,14 @@ public interface Hopper {
      * @return position of this hopper
      */
     Coordinate getCoordinate();
+
+    /**
+     * Get the status of this hopper.
+     *
+     * @return never null
+     */
+    @NotNull
+    HopperStatus getStatus();
 
     /**
      * Get the position of this hopper.
