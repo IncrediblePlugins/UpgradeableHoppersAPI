@@ -3,6 +3,7 @@ package me.angeschossen.upgradeablehoppers.api.events.hopper;
 import com.github.angeschossen.pluginframework.api.utils.Checks;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
 import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;
+import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -16,10 +17,13 @@ public abstract class HopperPlayerEvent extends Event {
 
     /**
      * Constructor
+     *
      * @param hopper the involved hopper
      * @param player the player
      */
     protected HopperPlayerEvent(@NotNull Hopper hopper, @Nullable HopperPlayer player) {
+        super(!Bukkit.isPrimaryThread());
+
         Checks.requireNonNull(hopper, "hopper");
         this.player = player;
         this.hopper = hopper;
@@ -27,6 +31,7 @@ public abstract class HopperPlayerEvent extends Event {
 
     /**
      * Get the player that created the link.
+     *
      * @return null, if no player triggered this event.
      */
     @Nullable
@@ -36,6 +41,7 @@ public abstract class HopperPlayerEvent extends Event {
 
     /**
      * Get the hopper involved in this event.
+     *
      * @return the hopper
      */
     @NotNull

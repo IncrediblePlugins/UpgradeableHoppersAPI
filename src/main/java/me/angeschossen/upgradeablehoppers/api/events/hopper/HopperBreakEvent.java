@@ -74,6 +74,11 @@ public class HopperBreakEvent extends HopperPlayerCancellableEvent {
         /**
          * The broke because of an explosion.
          */
-        EXPLOSION
+        EXPLOSION,
+        /**
+         * The land or island etc., in which the hopper is located, got unclaimed / deleted.
+         * The server must enable this in config.yml.
+         */
+        REGION_UNCLAIM
     }
 }

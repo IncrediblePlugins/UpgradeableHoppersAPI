@@ -3,7 +3,6 @@ package me.angeschossen.upgradeablehoppers.api.hopper.link;
 import com.github.angeschossen.pluginframework.api.blockutil.BlockPosition;
 import me.angeschossen.upgradeablehoppers.api.hopper.Coordinate;
 import org.bukkit.Material;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
