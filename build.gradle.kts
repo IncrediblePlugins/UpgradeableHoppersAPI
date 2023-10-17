@@ -62,7 +62,7 @@ dependencies {
 }
 
 group = "com.github.angeschossen"
-version = "4.13.10"
+version = "4.13.12"
 description = "UpgradeableHoppersAPI"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
