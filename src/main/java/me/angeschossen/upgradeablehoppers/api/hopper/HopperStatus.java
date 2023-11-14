@@ -17,5 +17,10 @@ public enum HopperStatus {
      * The hopper will be deleted on the next load, since the region it stands in got unclaimed, while the chunk of the hopper
      * wasn't loaded. This depends on the server's config.
      */
-    DELETION_PENDING_UNCLAIM
+    DELETION_PENDING_UNCLAIM,
+    /**
+     * The hopper will be deleted on the next load, since the owner got untrusted in the region it stands in, while the chunk of the hopper
+     * wasn't loaded. This depends on the server's config.
+     */
+    DELETION_PENDING_UNTRUST,
 }

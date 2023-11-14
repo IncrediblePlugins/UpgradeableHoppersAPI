@@ -79,6 +79,11 @@ public class HopperBreakEvent extends HopperPlayerCancellableEvent {
          * The land or island etc., in which the hopper is located, got unclaimed / deleted.
          * The server must enable this in config.yml.
          */
-        REGION_UNCLAIM
+        REGION_UNCLAIM,
+        /**
+         * The owner of the hopper got untrusted from the region it stands in. This depends on
+         * the server's config.
+         */
+        REGION_UNTRUST
     }
 }
