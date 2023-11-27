@@ -2,6 +2,7 @@ package me.angeschossen.upgradeablehoppers.api.hopper.link;
 
 import com.github.angeschossen.pluginframework.api.blockutil.BlockPosition;
 import me.angeschossen.upgradeablehoppers.api.hopper.Coordinate;
+import me.angeschossen.upgradeablehoppers.api.hopper.Nameable;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -10,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Links allow items to be transferred over the air to containers etc.
  */
-public interface Link {
+public interface Link extends Nameable {
 
     /**
      * Add an item to this link.

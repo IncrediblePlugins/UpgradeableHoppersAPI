@@ -20,7 +20,7 @@ import java.util.UUID;
 /**
  * Represents a placed upgradeable hopper.
  */
-public interface Hopper {
+public interface Hopper extends Nameable {
 
     /**
      * Get the links of this hopper.
