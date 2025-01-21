@@ -1,6 +1,7 @@
 package me.angeschossen.upgradeablehoppers.api.stacking;
 
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.Nullable;
 
 public interface ItemStackWrapper {
     /**
@@ -23,7 +24,8 @@ public interface ItemStackWrapper {
     /**
      * Remove an amount.
      * @param amount amount to remove
-     * @return the removed amount
+     * @return null, if item stacks amount < 1
      */
+    @Nullable
     ItemStack removeAmount(int amount);
 }
