@@ -1,5 +1,5 @@
 group = "com.github.angeschossen"
-version = "4.19.0"
+version = "4.19.1"
 description = "UpgradeableHoppersAPI"
 
 plugins {
