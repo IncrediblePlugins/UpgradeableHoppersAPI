@@ -2,12 +2,17 @@ package me.angeschossen.upgradeablehoppers.api.events.hopper;
 
 import com.github.angeschossen.pluginframework.api.utils.Checks;
 import me.angeschossen.upgradeablehoppers.api.events.hopper.base.HopperEventCancelable;
+import me.angeschossen.upgradeablehoppers.api.events.hopper.base.HopperPlayerCancellableEvent;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
 import me.angeschossen.upgradeablehoppers.api.hopper.upgrade.HopperLevel;
+import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-public class HopperUpgradeEvent extends HopperEventCancelable {
+/**
+ * Called whenever a hopper is upgraded.
+ */
+public class HopperUpgradeEvent extends HopperPlayerCancellableEvent {
     public static HandlerList handlerList = new HandlerList();
     private final @NotNull HopperLevel hopperLevel;
 
@@ -17,8 +22,8 @@ public class HopperUpgradeEvent extends HopperEventCancelable {
      * @param hopper   the involved hopper
      * @param levelNew the new level
      */
-    public HopperUpgradeEvent(@NotNull Hopper hopper, @NotNull HopperLevel levelNew) {
-        super(hopper);
+    public HopperUpgradeEvent(@NotNull Hopper hopper, @NotNull HopperPlayer player, @NotNull HopperLevel levelNew) {
+        super(hopper, player);
 
         this.hopperLevel = Checks.requireNonNull(levelNew, "levelNew");
     }

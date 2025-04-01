@@ -8,6 +8,10 @@ import org.bukkit.entity.Item;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * For this event to be called, the server admin needs to explicitly enable it in the configuration.
+ * Before using this event please read more info about it in the <a href="https://wiki.incredibleplugins.com/upradeablehoppers/developers/api#preventing-item-pickup">wiki</a>.
+ */
 public class HopperItemPickupEvent extends HopperEventCancelable {
     public static HandlerList handlerList = new HandlerList();
     private final @NotNull Item item;
