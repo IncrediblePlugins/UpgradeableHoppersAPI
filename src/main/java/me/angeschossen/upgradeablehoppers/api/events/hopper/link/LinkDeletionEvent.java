@@ -1,7 +1,7 @@
 package me.angeschossen.upgradeablehoppers.api.events.hopper.link;
 
 import com.github.angeschossen.pluginframework.api.utils.Checks;
-import me.angeschossen.upgradeablehoppers.api.events.hopper.HopperPlayerCancellableEvent;
+import me.angeschossen.upgradeablehoppers.api.events.hopper.base.HopperPlayerCancellableEvent;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
 import me.angeschossen.upgradeablehoppers.api.hopper.link.Link;
 import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;

@@ -1,4 +1,4 @@
-package me.angeschossen.upgradeablehoppers.api.events.hopper;
+package me.angeschossen.upgradeablehoppers.api.events.hopper.base;
 
 import com.github.angeschossen.pluginframework.api.utils.Checks;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
@@ -11,9 +11,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Used for events that involve a hopper and player.
  */
-public abstract class HopperPlayerEvent extends Event {
+public abstract class HopperPlayerEvent extends HopperEvent {
     protected final @Nullable HopperPlayer player;
-    protected final @NotNull Hopper hopper;
 
     /**
      * Constructor
@@ -22,11 +21,9 @@ public abstract class HopperPlayerEvent extends Event {
      * @param player the player
      */
     protected HopperPlayerEvent(@NotNull Hopper hopper, @Nullable HopperPlayer player) {
-        super(!Bukkit.isPrimaryThread());
+        super(hopper);
 
-        Checks.requireNonNull(hopper, "hopper");
         this.player = player;
-        this.hopper = hopper;
     }
 
     /**
@@ -38,15 +35,4 @@ public abstract class HopperPlayerEvent extends Event {
     public final HopperPlayer getHopperPlayer() {
         return player;
     }
-
-    /**
-     * Get the hopper involved in this event.
-     *
-     * @return the hopper
-     */
-    @NotNull
-    public final Hopper getHopper() {
-        return hopper;
-    }
-
 }

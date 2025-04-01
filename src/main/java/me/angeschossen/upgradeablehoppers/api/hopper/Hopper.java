@@ -5,6 +5,8 @@ import me.angeschossen.upgradeablehoppers.api.events.hopper.link.LinkDeletionEve
 import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException;
 import me.angeschossen.upgradeablehoppers.api.hopper.link.Link;
 import me.angeschossen.upgradeablehoppers.api.hopper.role.RoleFlag;
+import me.angeschossen.upgradeablehoppers.api.hopper.upgrade.AttributeType;
+import me.angeschossen.upgradeablehoppers.api.hopper.upgrade.HopperLevel;
 import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -21,6 +23,8 @@ import java.util.UUID;
  * Represents a placed upgradeable hopper.
  */
 public interface Hopper extends Nameable {
+
+    HopperLevel getLevel(AttributeType attributeType);
 
     /**
      * Get the links of this hopper.

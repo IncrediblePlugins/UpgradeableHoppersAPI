@@ -1,5 +1,6 @@
 package me.angeschossen.upgradeablehoppers.api;
 
+import me.angeschossen.upgradeablehoppers.api.config.UpgradeableHoppersConfig;
 import me.angeschossen.upgradeablehoppers.api.exceptions.UnloadedTargetException;
 import me.angeschossen.upgradeablehoppers.api.handler.APIHandler;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
@@ -41,6 +42,12 @@ public interface UpgradeableHoppersAPI {
             throw new IllegalStateException("UpgradeableHoppers hasn't loaded yet. Could can only use the API after UpgradeableHoppers finished loading.");
         }
     }
+
+    /**
+     * Get info about the configuration of the plugin.
+     * @return never null
+     */
+    @NotNull UpgradeableHoppersConfig getConfig();
 
     /**
      * Retrieve hopper by its location.

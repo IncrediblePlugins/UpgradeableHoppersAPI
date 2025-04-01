@@ -1,4 +1,4 @@
-package me.angeschossen.upgradeablehoppers.api.events.hopper;
+package me.angeschossen.upgradeablehoppers.api.events.hopper.base;
 
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
 import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;

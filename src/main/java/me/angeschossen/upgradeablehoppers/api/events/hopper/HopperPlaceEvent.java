@@ -1,5 +1,6 @@
 package me.angeschossen.upgradeablehoppers.api.events.hopper;
 
+import me.angeschossen.upgradeablehoppers.api.events.hopper.base.HopperPlayerCancellableEvent;
 import me.angeschossen.upgradeablehoppers.api.hopper.Hopper;
 import me.angeschossen.upgradeablehoppers.api.player.HopperPlayer;
 import org.bukkit.event.HandlerList;
