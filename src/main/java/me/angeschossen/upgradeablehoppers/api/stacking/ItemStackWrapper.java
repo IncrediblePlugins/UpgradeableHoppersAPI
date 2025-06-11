@@ -24,7 +24,7 @@ public interface ItemStackWrapper {
     /**
      * Remove an amount.
      * @param amount amount to remove
-     * @return null, if item stacks amount < 1
+     * @return null, if item stacks amount smaller than 1
      */
     @Nullable
     ItemStack removeAmount(int amount);
