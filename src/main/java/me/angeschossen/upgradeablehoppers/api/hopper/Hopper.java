@@ -95,6 +95,21 @@ public interface Hopper extends Nameable {
     @Nullable Link addLink(@NotNull Block block, @Nullable Player player) throws IllegalArgumentException, IllegalStateException, UnloadedTargetException;
 
     /**
+     * Check if the hopper is paused.
+     *
+     * @return true, if for example the chunk is unloaded or the hopper is paused via redstone
+     */
+    boolean isPaused();
+
+    /**
+     * Push all items inside the hopper to the links.
+     *
+     * @param transferAmountOverride set the max amount of items transferred. If null, uses the limit from the hopper level.
+     * @throws IllegalStateException if {@link #isPaused()} returns true
+     */
+    void pushItemToLinks(@Nullable Integer transferAmountOverride);
+
+    /**
      * Remove a link.
      *
      * @param player Player that initiated the removal. If null, no player initiated it.
